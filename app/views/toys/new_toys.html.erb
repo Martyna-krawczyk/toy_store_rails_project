@@ -1,0 +1,20 @@
+<h1>Add New Toy</h1>
+<div class=new_toy_form>
+<%= form_with url: toys_new_path, model: @toy do |t| %>
+
+  <%= t.label :name %><br>
+  <%= t.text_field :name %><br>
+
+  <%= t.label :description %><br>
+  <%= t.text_field :description %><br>
+
+  <%= t.label :date_item_posted %><br>
+  <%= t.date_field :date_item_posted %><br>
+
+  <%= t.label :user %><br>
+  <%= t.text_field :user %><br>
+
+  <%= t.submit %>
+
+<% end %>
+</div>
