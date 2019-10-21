@@ -1,6 +1,5 @@
-<h1>Add New Toy</h1>
 <div class=new_toy_form>
-<%= form_with url: toys_new_path, model: @toy do |t| %>
+<%= form_with model: toy do |t| %>
 
   <%= t.label :name %><br>
   <%= t.text_field :name %><br>
@@ -13,6 +12,11 @@
 
   <%= t.label :user %><br>
   <%= t.text_field :user %><br>
+
+  <div> 
+    <%= t.label :picture%>
+    <%= t.file_field :picture, accept: 'image/png,image/gif,image/jpg,image/jpg' %>
+  </div>
 
   <%= t.submit %>
 

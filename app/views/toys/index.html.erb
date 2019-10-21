@@ -1,6 +1,27 @@
 <h1>Toys List</h1>
-<% @toys.each do |toy| %>
-<%= toy.name %>
-<%= toy.description %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Date Item Posted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @toys.each do |toy| %>
+      <tr>
+        <td><%= toy.name %></td>
+        <td><%= toy.description %></td>
+        <td><%= toy.date_item_posted %></td>
+        <td><%= link_to 'Show', show_toy_path(toy) %></td>
+        <td><%= link_to 'Edit', edit_toy_path(toy) %></td>
+        <td><%= link_to 'Destroy', destroy_toy_path(toy), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <br>
- <%end%>
+ <%= link_to("New Toys", new_toy_path) %>

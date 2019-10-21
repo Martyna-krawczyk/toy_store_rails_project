@@ -1,0 +1,24 @@
+
+<h1>Show Toy</h1>
+
+<p>
+<%= image_tag @toy.picture if @toy.picture.attached?%>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @toy.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @toy.description %>
+</p>
+
+<p>
+  <strong>Date Item Posted:</strong>
+  <%= @toy.date_item_posted %>
+</p>
+
+
+<%= link_to 'Edit', edit_toy_path(@toy) %> |
+<%= link_to 'Back', root_path %>
